@@ -6,6 +6,7 @@ export const GET_REPOSITORIES = gql`
       repositoryCount
       repos: nodes {
         ... on Repository {
+          id
           name
           languages(first: 1) {
             nodes {

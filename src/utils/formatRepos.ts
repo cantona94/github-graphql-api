@@ -6,6 +6,7 @@ export const formatRepos = (repos: IRepo[]) => {
   if (repos) {
     for (const repo of repos) {
       newRepos.push({
+        id: repo.id,
         name: repo.name,
         language: repo.languages.nodes[0]?.name,
         forkCount: repo.forkCount,

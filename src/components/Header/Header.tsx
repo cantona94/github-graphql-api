@@ -25,6 +25,7 @@ export const Header = ({ setSearchString }: Props) => {
         onChange={handleChange}
         placeholder="Введите поисковый запрос"
         variant="outlined"
+        autoComplete="off"
         className={styles.textField}
         InputProps={{
           className: styles.input,
