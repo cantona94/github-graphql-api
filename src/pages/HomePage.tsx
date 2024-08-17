@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Header } from '../components';
+import { Header, Main } from '../components';
 import { useDispatch } from 'react-redux';
 import { useQuery } from '@apollo/client';
 import { GET_REPOSITORIES } from '../api/getRepos';
@@ -25,6 +25,7 @@ export const HomePage = () => {
   return (
     <>
       <Header setSearchString={setSearchString} />
+      <Main searchString={searchString} />
     </>
   );
 };
