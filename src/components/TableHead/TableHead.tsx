@@ -4,10 +4,20 @@ import {
   TableRow,
   TableSortLabel,
 } from '@mui/material';
-import { EnhancedTableProps, IFormatRepo } from '../../types';
+import { IFormatRepo, Order } from '../../types';
 import { Columns } from '../../utils/columns';
 
-export function TableHead(props: EnhancedTableProps) {
+interface TableProps {
+  onRequestSort: (
+    event: React.MouseEvent<unknown>,
+    property: keyof IFormatRepo
+  ) => void;
+
+  order: Order;
+  orderBy: string;
+}
+
+export function TableHead(props: TableProps) {
   const { order, orderBy, onRequestSort } = props;
   const createSortHandler =
     (property: keyof IFormatRepo) => (event: React.MouseEvent<unknown>) => {

@@ -1,7 +1,9 @@
 import { ApolloError } from '@apollo/client';
 
-interface ILanguages {
-  name: string;
+interface ITopic {
+  topic: {
+    name: string;
+  };
 }
 
 export interface IRepo {
@@ -9,16 +11,23 @@ export interface IRepo {
   name: string;
   forkCount: number;
   updatedAt: Date;
-  languages: {
-    nodes: ILanguages[];
-  };
   stargazers: {
     totalCount: number;
+  };
+  description: string;
+  primaryLanguage: {
+    name: string;
+  };
+  repositoryTopics: {
+    nodes: ITopic[];
+  };
+  licenseInfo: {
+    name: string;
   };
 }
 
 export interface IFormatRepo {
-  id: string
+  id: string;
   name: string;
   language: string;
   forkCount: number;
@@ -39,13 +48,3 @@ export interface IGraphQLAPI {
 }
 
 export type Order = 'asc' | 'desc';
-
-export interface EnhancedTableProps {
-  onRequestSort: (
-    event: React.MouseEvent<unknown>,
-    property: keyof IFormatRepo
-  ) => void;
-
-  order: Order;
-  orderBy: string;
-}

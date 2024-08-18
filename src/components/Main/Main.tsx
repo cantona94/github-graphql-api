@@ -4,7 +4,7 @@ import { Table as MUITable } from '@mui/material/';
 import TableBody from '@mui/material/TableBody';
 import TableContainer from '@mui/material/TableContainer';
 import TablePagination from '@mui/material/TablePagination';
-import { TableHead, TableRow } from '..';
+import { RepoInfo, TableHead, TableRow } from '..';
 import type { RootState } from '../../store';
 import { IFormatRepo, Order } from '../../types';
 import { formatRepos } from '../../utils/formatRepos';
@@ -129,8 +129,16 @@ export const Main = ({ searchString }: Props) => {
                   />
                 </div>
               </div>
-              <div className={styles.blog__description}>
-                <h5>Выберите репозиторий</h5>
+              <div
+                className={`${styles.blog__description} + ' ' + ${
+                  selected ? '' : styles.blog_selection
+                }`}
+              >
+                {selected ? (
+                  <RepoInfo selected={selected} />
+                ) : (
+                  <h5>Выберите репозиторий</h5>
+                )}
               </div>
             </div>
           ) : (

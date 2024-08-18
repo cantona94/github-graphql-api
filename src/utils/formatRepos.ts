@@ -8,7 +8,7 @@ export const formatRepos = (repos: IRepo[]) => {
       newRepos.push({
         id: repo.id,
         name: repo.name,
-        language: repo.languages.nodes[0]?.name,
+        language: repo.primaryLanguage?.name,
         forkCount: repo.forkCount,
         starCount: repo.stargazers.totalCount,
         updatedAt: new Date(repo.updatedAt).getTime(),
