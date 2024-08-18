@@ -1,5 +1,7 @@
 import { IRepo, IFormatRepo } from '../types';
 
+// форматирование данных репозиториев
+// полученных из GitHub GraphQL API
 export const formatRepos = (repos: IRepo[]) => {
   const newRepos: IFormatRepo[] = [];
 

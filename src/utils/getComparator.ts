@@ -1,6 +1,7 @@
 import { Order } from '../types';
 import { descendingComparator } from './descendingComparator';
 
+// получение напрявления сортировки
 export function getComparator<Key extends keyof any>(
   order: Order,
   orderBy: Key

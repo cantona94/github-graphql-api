@@ -1,3 +1,4 @@
+// функция сортировки
 export function stableSort<T>(
   array: readonly T[],
   comparator: (a: T, b: T) => number

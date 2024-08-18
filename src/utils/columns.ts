@@ -6,6 +6,7 @@ interface Column {
   sort: boolean;
 }
 
+// свойства столбцов таблицы
 export const Columns: readonly Column[] = [
   { id: 'name', label: 'Название', minWidth: 50, sort: false },
   { id: 'language', label: 'Язык', minWidth: 50, sort: false },
