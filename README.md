@@ -24,7 +24,7 @@ npm install
 npm run dev
 ```
 
-4. Next, set your GitHub API Personal Access Token by create .env and adding it to the end of the line: VITE_TOKEN=
+4. Next, set your GitHub API Personal Access Token by opening .env and adding it to the end of the line: VITE_TOKEN=
 
 node v20.14.0
 
